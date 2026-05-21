@@ -1,0 +1,17 @@
+Whack-a-mole
+For a particular digit of their verification code, user will need to play a whack-a-mole game of different digits (as the moles)
+and the user would need to specifically whack (with their cursor) their digit a specific amount of times within the time limit.
+If they miss one, they will need to redo it. If they hit the wrong number, they will lose 2s on their timer.
+If they whack it correctly then their counter for the correctly-hit whacks will increase by one.
+
+Coding:
+Use Python, Pygame, etc...
+Will need to use classes, inheritance, attributes, 2D lists, sorting/searching, algorithms, encapsulation (maybe), class & static methods, operator overloading (maybe), recursion (maybe), File I/O (maybe)
+
+UI wise:
+At the top have the "Enter Your Verification Code" with the 6-digit box thing below, and then the submit button below that.
+For the rest of the screen below, we will have a bunch of holes, and the user's cursor will be a hammer (need an image for the hammer). 
+The "moles" are simply just the numbers themselves (so need an image for each number).
+In the bottom left corner of the screen, we will have "Digit: {user's digit}" and then right below that, it will have the "Counter: {how many times the user has correctly whacked this digit}"
+In the bottom right corner of the screen, have a "Timer:" text and then a timer thing below that like "00:00s".
+In the bottom middle, have in small font "Whack your digit specififcally your digit number of times within the time limit!" or something more clearer.

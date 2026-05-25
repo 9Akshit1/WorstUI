@@ -1,3 +1,11 @@
+"""
+Title: Timer Class
+Course: ICS4U
+Author: Akshit Erukulla
+Summary: Defines a Timer class that checks the time passed within the game to update the timer and display it on the screen. The timercan be incremented and decremented if the user faces a penalty.
+History: May 25th, 2026
+"""
+
 import time
 import pygame
 
@@ -11,9 +19,10 @@ class Timer:
     - last_update_time (float): The last time the timer was updated (using the Python time library).
     
     Methods:
+    - __init__(duration): Initializes the timer with a given duration.
     - update(): Updates the timer by calculating the time passed since the last update. Decremenets the time_left accordingly.
-    - increment(seconds): Increments the time left by a specified number of seconds.
-    - decrement(seconds): Decrements the time left by a specified number of seconds.
+    - increment(seconds): Increments the time left by a given number of seconds.
+    - decrement(seconds): Decrements the time left by a given number of seconds.
     - reset(): Resets the time left to the original duration.
     - is_finished(): Checks if the timer has finished (when the time left is zero or less).
     - display_output(): Returns a Pygame surface with the current time left rendered as text.
@@ -78,6 +87,7 @@ class Timer:
         Arguments: None
         Outputs: None
         """
+        self.last_update_time = time.time()
         self.time_left = self.duration
 
     def is_finished(self):

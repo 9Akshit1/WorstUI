@@ -1,0 +1,26 @@
+# Configuration constants
+
+SCREEN_WIDTH = 1000
+SCREEN_HEIGHT = 700
+
+# Colors
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+GRAY = (200, 200, 200)
+LIGHT_GRAY = (240, 240, 240)
+BLUE = (0, 100, 200)
+GREEN = (0, 200, 0)
+RED = (200, 0, 0)
+
+# Game settings
+GRID_COLS = 5
+GRID_ROWS = 3
+MOLE_RADIUS = 40
+GAME_AREA_TOP = 150
+TIMER_DEFAULT = 30  # seconds
+
+# Input screen
+INPUT_BOX_WIDTH = 250
+INPUT_BOX_HEIGHT = 50
+DIGIT_BOX_SIZE = 35
+DIGIT_BOX_SPACING = 10

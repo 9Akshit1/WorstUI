@@ -45,8 +45,19 @@ scaled_image = pygame.transform.scale(my_image, (new_width, new_height))
 image_x = 100
 image_y = 150
 
+# Generate cloud positions with random speeds
+# Format: [x, y, speed]
+clouds = []
+for i in range(3):
+    cloud_x = random.randint(0, WIDTH - new_width)
+    cloud_y = random.randint(0, HEIGHT // 2 - new_height)
+    cloud_speed = random.uniform(1, 4)  # Random speed between 1 and 4 pixels per frame
+    clouds.append([cloud_x, cloud_y, cloud_speed])
+
 # Game loop control
 running = True
+clock = pygame.time.Clock()
+FPS = 60
 
 running = True
 while running:
@@ -68,10 +79,18 @@ while running:
     for hole_x, hole_y in holes:
         pygame.draw.ellipse(screen, (185, 139, 94), (hole_x - 25, hole_y - 15, 50, 30))
 
-    # Clouds
-    screen.blit(scaled_image, (image_x, image_y))
+    # Update and draw clouds
+    for cloud in clouds:
+        cloud[0] += cloud[2]  # Update x position based on speed
+        
+        # Wrap cloud around screen
+        if cloud[0] > WIDTH:
+            cloud[0] = -new_width
+        
+        screen.blit(scaled_image, (cloud[0], cloud[1]))
 
     # Update the display
     pygame.display.flip()
+    clock.tick(FPS)
 
 pygame.quit()

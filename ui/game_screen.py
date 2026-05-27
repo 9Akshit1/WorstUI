@@ -35,6 +35,19 @@ while len(holes) < 5:
         holes.append((hole_x, hole_y))
         hole_rects.append(new_rect)
 
+# 1. Import the image and optimize its format
+new_width = 100
+new_height = 60
+my_image = pygame.image.load(r"C:\Users\rickh\Downloads\cloud.png").convert_alpha()
+scaled_image = pygame.transform.scale(my_image, (new_width, new_height))
+
+# Set image position coordinates (X, Y)
+image_x = 100
+image_y = 150
+
+# Game loop control
+running = True
+
 running = True
 while running:
     for event in pygame.event.get():
@@ -54,6 +67,9 @@ while running:
     # Holes
     for hole_x, hole_y in holes:
         pygame.draw.ellipse(screen, (185, 139, 94), (hole_x - 25, hole_y - 15, 50, 30))
+
+    # Clouds
+    screen.blit(scaled_image, (image_x, image_y))
 
     # Update the display
     pygame.display.flip()

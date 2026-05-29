@@ -51,7 +51,7 @@ clouds = []
 for i in range(3):
     cloud_x = random.randint(0, WIDTH - new_width)
     cloud_y = random.randint(0, HEIGHT // 2 - new_height)
-    cloud_speed = random.uniform(1, 4)  # Random speed between 1 and 4 pixels per frame
+    cloud_speed = random.uniform(0.5, 1)  # Random speed between 1 and 4 pixels per frame
     clouds.append([cloud_x, cloud_y, cloud_speed])
 
 # Game loop control
@@ -81,9 +81,8 @@ while running:
 
     # Update and draw clouds
     for cloud in clouds:
-        cloud[0] += cloud[2]  # Update x position based on speed
-        
-        # Wrap cloud around screen
+        cloud[0] += cloud[2]
+ 
         if cloud[0] > WIDTH:
             cloud[0] = -new_width
         
